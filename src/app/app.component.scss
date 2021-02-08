@@ -1,0 +1,19 @@
+ion-menu {
+    --width: 100%;
+}
+
+.main-list {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-list {
+        width: 100%;
+
+        ion-item {
+            font-size: 18px;
+            font-weight: 100;
+        }
+    }
+}

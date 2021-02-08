@@ -1,0 +1,22 @@
+
+
+.confirmation {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ h2 {
+    font-size: 18px;
+ }
+
+ .main-button {
+    margin-top: 35%;
+}
+ion-content {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    --padding-start: 26px;
+    --padding-end: 26px;
+}

@@ -1,0 +1,101 @@
+<ion-header>  
+  <ion-toolbar color="primary">  
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  <ion-title>  
+    Rent a Car
+  </ion-title> 
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content color="primary">
+  <div *ngFor="let cat of items" class="category-block">
+    <ion-row no-padding class="category-banner">
+      <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
+        {{ cat.category }}
+      </ion-col>
+    </ion-row>
+ 
+    <ion-slides [options]="sliderConfig">
+     <ion-slide *ngFor="let product of cat.suv">
+        <div *ngIf="cat.expanded">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{ product.name }} <br> {{ product.price }}$ /zi
+              </ion-card-title>
+              <ion-card-content>
+                <img src="/assets/icon/suburban.png">
+                <ion-button color="warning" expand="full" (click)="addToCart(product)">Adauga</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let product of cat.small">
+         <div *ngIf="cat.expanded">
+           <ion-card>
+             <ion-card-header>
+               <ion-card-title>
+                 {{ product.name }} <br> {{ product.price }}$ /zi
+               </ion-card-title>
+               <ion-card-content>
+                 <img src="/assets/icon/a200.png">
+                 <ion-button color="warning" expand="full" (click)="addToCart(product)">Adauga</ion-button>
+               </ion-card-content>
+             </ion-card-header>
+           </ion-card>
+         </div>
+       </ion-slide>
+     </ion-slides>
+
+     <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let product of cat.family">
+         <div *ngIf="cat.expanded">
+           <ion-card>
+             <ion-card-header>
+               <ion-card-title>
+                 {{ product.name }} <br> {{ product.price }}$ /zi
+               </ion-card-title>
+               <ion-card-content>
+                 <img src="/assets/icon/e350.png">
+                 <ion-button color="warning" expand="full" (click)="addToCart(product)">Adauga</ion-button>
+               </ion-card-content>
+             </ion-card-header>
+           </ion-card>
+         </div>
+       </ion-slide>
+     </ion-slides>
+
+     <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let product of cat.van">
+         <div *ngIf="cat.expanded">
+           <ion-card>
+             <ion-card-header>
+               <ion-card-title>
+                 {{ product.name }} <br> {{ product.price }}$ /zi
+               </ion-card-title>
+               <ion-card-content>
+                 <img src="/assets/icon/sprinter.png">
+                 <ion-button color="warning" expand="full" (click)="addToCart(product)">Adauga</ion-button>
+               </ion-card-content>
+             </ion-card-header>
+           </ion-card>
+         </div>
+       </ion-slide>
+     </ion-slides>
+
+  </div>
+</ion-content>
